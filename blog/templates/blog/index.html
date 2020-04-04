@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block style %}
+    <style>
+    h1{
+        margin-top: 40px;
+        margin-bottom: 30px;
+    }
+    .info{
+        margin-top: 20px;
+        width: 400px;
+        margin-left: 37%;
+    }
+    .info p{
+        text-align: justify;
+        font-weight: normal;
+        font-size: 18px;
+    }
+    .parents{
+        width: 400px;
+        margin-left: 37%;
+    }
+    .parents p{
+        text-align: justify;
+        font-weight: normal;
+        font-size: 18px;
+    }
+    .childs{
+        width: 400px;
+        margin-left: 37%;
+    }
+    .childs p{
+        text-align: justify;
+        font-weight: normal;
+        font-size: 18px;
+    }
+    </style>
+{% endblock %}
+{% block content %}
+    <h1 align="center">Информация</h1>
+    <div class="info">
+        <p>На этом сайте будут выкладываться уроки. Во вкладке "Курсы" вы можете выбрать свой и перейти к просмотру уроков
+            Уроки будут выкладываться 2 раза в неделю, как и проходили занятия.
+        </p>
+    </div>
+    <h1 align="center">Для учеников</h1>
+    <div class="childs">
+        <p>
+            Домашнее задание можно скинуть в телеграм, вайбер, или на почту, все данные указаны во вкладке "контакты"
+        </p>
+    </div>
+    <h1 align="center">Для родителей</h1>
+    <div class="parents">
+    <p>
+        Во вкладке "ученики" будет список учеников, где каждый родитель сможет посмотреть на успеваемость своего ребёнка
+    </p>
+    </div>
+
+{% endblock %}

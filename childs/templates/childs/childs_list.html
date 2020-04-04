@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block style %}
+    <style>
+    .table{
+        margin-top: 100px;
+        width: 800px;
+        margin-left:25%;
+        margin-bottom: 150px;
+    }
+    </style>
+{% endblock %}
+
+{% block content %}
+<table class="table table-striped table-dark" >
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">ФИО</th>
+      <th scope="col">Оплата за текущий месяц</th>
+      <th scope="col">ДЗ за ткущую неделю</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for child in childs %}
+    <tr>
+      <th scope="row">{{ child.pk }}</th>
+      <td>{{ child.name }}</td>
+      <td>{{ child.paid }}</td>
+      <td>{{ child.homework }}</td>
+    </tr>
+  {% endfor %}
+
+
+
+  </tbody>
+</table>
+{% endblock %}

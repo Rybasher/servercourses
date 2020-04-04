@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block style %}
+    <style>
+    .content{
+        height: 600px;
+    }
+    a{
+
+        color: black;
+    }
+    </style>
+{% endblock %}
+{% block content %}
+    <div class="row mt-5 content">
+    <div class="col-md-12">
+
+    {% for cours in course %}
+        <h1 align="center"><a href="{% url 'childs:child_list' slug=cours.slug %}">{{ cours.title }}</a></h1>
+    {% endfor %}
+
+
+    </div>
+    </div>
+
+
+{% endblock %}
