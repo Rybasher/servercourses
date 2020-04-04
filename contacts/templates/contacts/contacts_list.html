@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block style %}
+
+{% endblock %}
+
+{% block content %}
+    <div class="row mt-5">
+    <div class="col-md-12 offset-4">
+        {% for teacher in teachers %}
+            <h4>Учитель: <small style="font-size: 16px">{{ teacher.name }}</small></h4>
+            <h4>Номер: <small style="font-size: 16px">{{ teacher.phone }}</small></h4>
+            <h4>Телеграм: <small style="font-size: 16px">{{ teacher.telegram }}</small></h4>
+            <h4>Почта: <small style="font-size: 16px">{{ teacher.email }}</small></h4>
+        {% endfor %}
+
+
+    </div>
+    </div>
+{% endblock %}
