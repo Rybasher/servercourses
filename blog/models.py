@@ -23,6 +23,7 @@ class Post(models.Model):
     content = models.TextField()
     link = models.CharField(max_length=300, verbose_name='Ссылка на видео')
     published_date = models.DateTimeField(auto_now_add=True, db_index=True, verbose_name='Опубликовано')
+    homework = models.TextField(verbose_name='Домашнее задание')
     views = models.IntegerField('Просмотры', default=0)
     course = models.ForeignKey('Course', related_name='posts', on_delete=models.CASCADE)
 
