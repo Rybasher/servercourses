@@ -12,16 +12,16 @@
     <h1 align="center">{{ course }}</h1>
     <div class="row">
             <div class="col-md-12 offset-4">
-                {% for post in posts %}
+                {% for post in page_object.object_list %}
                     <div class="card" style="width: 18rem;">
                     {% if post.image %}
                         <img src="{{ post.image.url }}" class="card-img-top" alt="">
                     {% endif %}
 
                       <div class="card-body">
-                        <h5 class="card-title"><a href="{% url 'blog:post_detail' slug=post.slug %}">{{ post.title }}</a></h5>
-                        <p class="card-text">{{ post.content }}</p>
-                        <a href="#" class="btn btn-primary">Перейти к уроку</a>
+                        <h5 class="card-title">{{ post.title }}</h5>
+                        <p class="card-text" style="height: 100px; overflow-y: hidden">{{ post.content }}</p>
+                        <a href="{% url 'blog:post_detail' slug=post.slug %}" class="btn btn-primary">Перейти к уроку</a>
                       </div>
                     </div>
                 {% endfor %}
@@ -29,4 +29,25 @@
 
         </div>
     </div>
+<nav aria-label="Page navigation example" class="mt-5">
+  <ul class="pagination justify-content-center">
+
+    <li class="page-item {% if not prev_url %}disabled{% endif %}">
+      <a class="page-link" href="{{ prev_url }}" tabindex="-1" aria-disabled="true">Previous</a>
+    </li>
+      {% for n in page_object.paginator.page_range %}
+      {% if page_object.number == n %}
+         <li class="page-item active"><a class="page-link" href="?page={{ n }}">{{ n }}</a></li>
+      {% elif n > page_object.number|add:-3 and n < page_object.number|add:3 %}
+               <li class="page-item"><a class="page-link" href="?page={{ n }}">{{ n }}</a></li>
+       {% endif %}
+
+      {% endfor %}
+
+    <li class="page-item {% if not next_url %}disabled{% endif %}">
+      <a class="page-link" href="{{ next_url }}">Next</a>
+    </li>
+
+  </ul>
+</nav>
 {% endblock %}

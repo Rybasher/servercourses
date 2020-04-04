@@ -14,7 +14,9 @@
          {% if post.image %}
         <img src="{{ post.image.url }}"  width="400" height="600" alt="image">
     {% endif %}
+    <h4 style="margin-left: 210px;">Конспект</h4>
     <p>{{ post.content }}</p>
+    <h4 style="margin-left: 210px;">Видео урок</h4>
     <iframe width="560" height="315" src="{{ post.link }}"
             frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <p><small>Видеоурок</small></p>
